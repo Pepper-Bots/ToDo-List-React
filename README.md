@@ -1,39 +1,59 @@
-# Faire une application TODO list
+# 📝 Application Todo List avec React
 
-L'objectif est de rendre dynamique cette application avec REACT.
+Ce projet est une simple application de gestion de tâches (Todo List) développée dans le cadre d’un exercice pédagogique.  
+L’objectif principal est de découvrir ou renforcer l'utilisation de **React** et la gestion d’état via les **hooks**.
 
-## Lancement du projet
+---
 
-- `pnpm install`
-- `pnpm run dev`
+## 🚀 Lancement du projet
 
-## Fonctionnalités
+Assurez-vous d'avoir `pnpm` installé, puis :
 
-### Composant Barre de recherche
+```bash
+pnpm install
+pnpm run dev
+```
 
-- La barre de recherche permet d'entrer la description d'une tâche
-- En appuyant sur le bouton d'ajout, transmet la description saisie (action qui prévient le composant parent)
-- Le champ texte est réinitialisé
+## ⚙️ Fonctionnalités par composant
 
-### Composant TodoItem
+### 🔍 SearchBar (Barre de recherche)
 
-- Checkbox pour définir que la tâche est faite, dans ce cas de figure il y a :
-  - background color qui change
-  - le trait qui barre le texte
-  - la checkbox reste cochée
-  - Cocher est une action qui prévient le composant parent
-- On peut également décocher (action qui prévient le composant parent)
-- On peut choisir de vouloir supprimer la tâche (action qui prévient le composant parent)
+- Permet de saisir une nouvelle tâche.
+- Envoi de la tâche au composant parent lors de la validation.
+- Réinitialisation automatique du champ après soumission.
 
-### Composant TodoApp
+### ✅ TodoItem (Élément de tâche)
 
-- La liste est triée, d'abord ce qui n'est pas fait, ensuite ce qui a été fait
-- Ce composant gère la mutation de la data (`useState`) et modifie la data en fonction des deux autres composants (si on a ajouté une tâche, coché une tâche, supprimé une tâche, ...)
+- Affiche chaque tâche avec une case à cocher.
+- Coche = tâche terminée :
+    - Fond de couleur modifié.
+    - Texte barré.
+    - Checkbox restée cochée.
 
-## Remarques
+- Décoche = tâche de nouveau active.
+- Possibilité de supprimer la tâche.
+- Chaque action remonte au composant parent.
 
-- Vous devez créer les différents composants
+### 📋 TodoApp (Application principale)
 
-## Ressources
+- Gère l'état global des tâches via useState.
+- Affiche la liste triée :
+    - D'abord les tâches à faire.
+    - Ensuite les tâches terminées.
 
-- N'oubliez pas de reprendre les ressources sur Teams pour trouver revoir les bases vues en cours ;-)
+- Reçoit les modifications des composants enfants (ajout, suppression, validation).
+
+## ✍️ Remarques pédagogiques
+
+Tous les composants React doivent être créés et gérés manuellement.
+L’objectif est de bien comprendre le flux de données entre les composants (du parent vers l’enfant et inversement).
+
+## 📚 Ressources
+
+Ne pas oublier de consulter les supports disponibles sur Microsoft Teams pour revoir les notions abordées en cours.
+
+## 💡 Améliorations possibles (bonus)
+
+- Ajouter un filtre (Tous / À faire / Terminés).
+- Sauvegarde des tâches dans le localStorage.
+- Ajout de transitions/animations lors de la suppression ou validation.
